@@ -32,10 +32,12 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     binding = setContentView(this, R.layout.activity_main)
 
+    initContextDependentConstants()
+
+    // Log general information of interest.
+    displayAppInfo()
     // Useful to see which preferences are set under the hood by Matter libraries.
     displayPreferences(this)
-
-    initContextDependentConstants()
   }
 
   /**

@@ -74,6 +74,9 @@ class AppCommissioningService : Service(), CommissioningService.Callback {
   }
 
   override fun onCommissioningRequested(metadata: CommissioningRequestMetadata) {
+    /*
+    val timer System.nanoTime()
+     */
     Timber.d(
         "*** onCommissioningRequested ***:\n" +
             "\tdeviceDescriptor: " +

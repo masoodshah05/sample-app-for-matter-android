@@ -124,6 +124,10 @@ fun isMultiAdminCommissioning(intent: Intent): Boolean {
   return intent.action == "com.google.android.gms.home.matter.ACTION_COMMISSION_DEVICE"
 }
 
+fun displayAppInfo() {
+  Timber.d("Version: ${VERSION_NAME}")
+}
+
 /**
  * The Matter APIs make use of SharedPreferences. Useful to print what they are when the app starts.
  */
