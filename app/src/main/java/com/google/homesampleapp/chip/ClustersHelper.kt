@@ -334,13 +334,7 @@ class ClustersHelper @Inject constructor(private val chipClient: ChipClient) {
   suspend fun setOnOffDeviceStateOnOffCluster(deviceId: Long, isOn: Boolean, endpoint: Int) {
     Timber.d(
         "setOnOffDeviceStateOnOffCluster() [${deviceId}] isOn [${isOn}] endpoint [${endpoint}]")
-    val connectedDevicePtr =
-        try {
-          chipClient.getConnectedDevicePointer(deviceId)
-        } catch (e: IllegalStateException) {
-          Timber.e("Can't get connectedDevicePointer.")
-          return
-        }
+    val connectedDevicePtr = chipClient.getConnectedDevicePointer(deviceId)
     if (isOn) {
       // ON
       return suspendCoroutine { continuation ->

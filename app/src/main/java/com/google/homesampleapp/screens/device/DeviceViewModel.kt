@@ -235,7 +235,8 @@ constructor(
         clustersHelper.setOnOffDeviceStateOnOffCluster(deviceUiModel.device.deviceId, isOn, 1)
         devicesStateRepository.updateDeviceState(deviceUiModel.device.deviceId, true, isOn)
       } catch (e: Throwable) {
-        Timber.e("Failed setting on/off state")
+        Timber.e("Failed setting on/off state. Marking device as offline.")
+        devicesStateRepository.updateDeviceState(deviceUiModel.device.deviceId, false, false)
       }
       // CODELAB SECTION END
     }

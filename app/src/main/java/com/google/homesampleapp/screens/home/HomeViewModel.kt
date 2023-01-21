@@ -402,9 +402,13 @@ constructor(
   fun updateDeviceStateOn(deviceUiModel: DeviceUiModel, isOn: Boolean) {
     Timber.d("updateDeviceStateOn: Device [${deviceUiModel}]  isOn [${isOn}]")
     viewModelScope.launch {
-      Timber.d("Handling real device")
-      clustersHelper.setOnOffDeviceStateOnOffCluster(deviceUiModel.device.deviceId, isOn, 1)
-      devicesStateRepository.updateDeviceState(deviceUiModel.device.deviceId, true, isOn)
+      try {
+        clustersHelper.setOnOffDeviceStateOnOffCluster(deviceUiModel.device.deviceId, isOn, 1)
+        devicesStateRepository.updateDeviceState(deviceUiModel.device.deviceId, true, isOn)
+      } catch (e: Throwable) {
+        Timber.e("Failed setting on/off state. Marking device as offline.")
+        devicesStateRepository.updateDeviceState(deviceUiModel.device.deviceId, false, false)
+      }
     }
   }
 

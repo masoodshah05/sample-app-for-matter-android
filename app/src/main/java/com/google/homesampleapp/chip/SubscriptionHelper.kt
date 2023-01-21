@@ -8,6 +8,7 @@ import chip.devicecontroller.model.ChipAttributePath
 import chip.devicecontroller.model.ChipEventPath
 import chip.devicecontroller.model.ChipPathId
 import chip.devicecontroller.model.NodeState
+import com.google.homesampleapp.data.DevicesStateRepository
 import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -17,7 +18,9 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @Singleton
-class SubscriptionHelper @Inject constructor(private val chipClient: ChipClient) {
+class SubscriptionHelper @Inject constructor(
+    private val chipClient: ChipClient,
+    private val devicesStateRepository: DevicesStateRepository) {
 
   private val scope = CoroutineScope(Dispatchers.Main)
 
@@ -61,6 +64,8 @@ class SubscriptionHelper @Inject constructor(private val chipClient: ChipClient)
             false)
       } catch (e: Throwable) {
         Timber.e("subscribeToPeriodicUpdates() failed: $e")
+        Timber.d("Marking device as offline.")
+        devicesStateRepository.updateDeviceState(deviceId, false, false)
       }
     }
   }
@@ -73,6 +78,8 @@ class SubscriptionHelper @Inject constructor(private val chipClient: ChipClient)
         chipClient.chipDeviceController.shutdownSubscriptions(connectedDevicePtr)
       } catch (e: Throwable) {
         Timber.e("unsubscribeToPeriodicUpdates() failed: $e")
+        Timber.d("Marking device as offline.")
+        devicesStateRepository.updateDeviceState(deviceId, false, false)
       }
     }
   }
