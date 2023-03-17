@@ -19,11 +19,12 @@ package com.google.homesampleapp.chip
 object MatterConstants {
   val DeviceTypesMap =
       mapOf<Long, String>(
+          14L to "Aggregator",
+          19L to "Bridged Node",
           22L to "Root Node",
           256L to "On/Off Light",
           266L to "Outlet",
       )
-
   val ClustersMap =
       mapOf<Long, String>(
           3L to "Identify",
@@ -40,7 +41,7 @@ object MatterConstants {
           43L to "Localization Configuration",
           44L to "Time Format Localization",
           44L to "Time Format Localization",
-          44L to "Unit Localization",
+          45L to "Unit Localization",
           48L to "General Commissioning",
           49L to "Network Commissioning",
           50L to "Diagnostics Logs",
@@ -50,6 +51,7 @@ object MatterConstants {
           54L to "Wi-Fi Network Diagnostics",
           55L to "Ethernet Network Diagnostics",
           56L to "Time Synchronization",
+          57L to "Bridged Device Basic Information",
           59L to "Switch",
           60L to "Administrator Commissioning",
           62L to "Node Operational Credentials",

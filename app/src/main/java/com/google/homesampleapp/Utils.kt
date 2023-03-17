@@ -95,6 +95,7 @@ fun Device.DeviceType.displayString(): String {
 
 fun convertToAppDeviceType(matterDeviceType: Long): Device.DeviceType {
   return when (matterDeviceType) {
+    14L -> Device.DeviceType.TYPE_BRIDGE // 0x000E Aggregator
     256L -> Device.DeviceType.TYPE_LIGHT // 0x0100 On/Off Light
     266L -> Device.DeviceType.TYPE_OUTLET // 0x010a (On/Off Plug-in Unit)
     else -> Device.DeviceType.TYPE_UNKNOWN

@@ -34,6 +34,7 @@ message Device {
         TYPE_UNKNOWN = 1;
         TYPE_LIGHT = 2;
         TYPE_OUTLET = 3;
+        TYPE_BRIDGE = 4;
     }
     DeviceType deviceType = 4;
 
@@ -48,6 +49,6 @@ message Device {
 }
 
 message Devices {
-  int64 last_device_id = 1;
-  repeated Device devices = 2;
+    int64 last_device_id = 1;
+    repeated Device devices = 2;
 }

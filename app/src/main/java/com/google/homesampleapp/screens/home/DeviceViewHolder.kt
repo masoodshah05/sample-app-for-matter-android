@@ -39,6 +39,7 @@ class DeviceViewHolder(private val binding: DeviceViewItemBinding) :
   // TODO: Can't this be cached somewhere?
   private val lightBulbIcon = getResourceId("quantum_gm_ic_lights_gha_vd_theme_24")
   private val outletIcon = getResourceId("ic_baseline_outlet_24")
+  private val bridgeIcon = getResourceId("baseline_hub_24")
   private val unknownDeviceIcon = getResourceId("ic_baseline_device_unknown_24")
   private val shapeOffDrawable = getDrawable("device_item_shape_off")
   private val shapeOnDrawable = getDrawable("device_item_shape_on")
@@ -57,6 +58,7 @@ class DeviceViewHolder(private val binding: DeviceViewItemBinding) :
         when (deviceUiModel.device.deviceType) {
           Device.DeviceType.TYPE_LIGHT -> lightBulbIcon
           Device.DeviceType.TYPE_OUTLET -> outletIcon
+          Device.DeviceType.TYPE_BRIDGE -> bridgeIcon
           else -> unknownDeviceIcon
         }
     val shapeDrawable =
