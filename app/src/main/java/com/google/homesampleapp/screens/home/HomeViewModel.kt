@@ -21,6 +21,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentSender
 import android.os.SystemClock
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -232,8 +233,8 @@ constructor(
         }
         .addOnFailureListener { error ->
           Timber.e(error)
-          _commissionDeviceStatus.postValue(
-              TaskStatus.Failed("Setting up the IntentSender failed", error))
+            Toast.makeText(context, "Setting up the IntentSender failed, $error", Toast.LENGTH_SHORT).show()
+
         }
   }
   // CODELAB SECTION END

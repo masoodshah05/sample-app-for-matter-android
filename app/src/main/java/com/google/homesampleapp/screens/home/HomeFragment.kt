@@ -482,9 +482,9 @@ class HomeFragment : Fragment() {
   // Companion object
 
   companion object {
-    private const val STATUS_PAIRING_SUCCESS = 0
+    const val STATUS_PAIRING_SUCCESS = 0
 
     /** Set for the fail-safe timer before onDeviceAttestationFailed is invoked. */
-    private const val DEVICE_ATTESTATION_FAILED_TIMEOUT_SECONDS = 60
+    const val DEVICE_ATTESTATION_FAILED_TIMEOUT_SECONDS = 60
   }
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@color/green">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/sensor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sensor"
+            android:textSize="13dp"
+            android:drawableEnd="@drawable/arrow_down"
+            android:drawablePadding="5dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/inter_regular"
+            />
+        <TextView
+            android:id="@+id/deviceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All Devices"
+            android:textSize="18dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/inter_bold"
+            />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Airshift"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_centerVertical="true"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_bold"
+        />
+</RelativeLayout>

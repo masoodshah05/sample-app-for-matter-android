@@ -54,6 +54,17 @@
         <activity
             android:name="com.google.homesampleapp.MainActivity"
             android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.android.gms.home.matter.ACTION_COMMISSION_DEVICE"/>-->
+<!--                <category android:name="android.intent.category.DEFAULT"/>-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".newui.activities.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -67,7 +78,6 @@
             android:name="com.google.homesampleapp.commissioning.AppCommissioningService"
             android:exported="true"
             />
-
         <service android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"
             android:exported="false">

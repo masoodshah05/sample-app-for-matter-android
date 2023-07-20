@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <string name="app_name">GHSAFM</string>
+    <string name="app_name">AirShift</string>
 
     <!-- Device Types -->
     <string name="device_type_unspecified" translatable="false">unspecified</string>
@@ -114,4 +114,5 @@ All of the information will be logged in logcat. Use this command  to only view 
     <string name="light_off">Light Off</string>
     <string name="go_to_home">Home</string>
     <string name="no_devices_image">No devices image</string>
+    <string name="show_all_devices"><u>Show All Devices</u></string>
 </resources>
